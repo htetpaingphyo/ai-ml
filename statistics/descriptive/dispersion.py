@@ -65,3 +65,22 @@ def quartile_coefficient_of_variation(l: list) -> float:
     midhinge = (q3 + q1) / 2
 
     return 1 / 2 * iqrv / midhinge
+
+
+# Percentile
+def percentile(l: list, p: float) -> float:
+    l.sort()
+    n = len(l) - 1
+    k = p / 100 * n
+
+    if k.is_integer():
+        return l[int(k)]
+
+    f = int(k)
+    d = k - f  # Get the decimal part of k
+
+    if d == 0:
+        return l[f]
+
+    # Use the linear interpolation for each percentage value
+    return l[f] + d * (l[f + 1] - l[f])
