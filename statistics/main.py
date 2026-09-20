@@ -1,7 +1,10 @@
 import random
-from descriptive.mmm import mean, median, mode
-from descriptive.quartiles import outliers, q_one, q_three, iqr
-from descriptive.stdv import (
+from descriptive.center import mean, median, mode
+from descriptive.dispersion import (
+    outliers,
+    q_one,
+    q_three,
+    iqr,
     normal_distribution as nd,
     standard_deviation as sd,
 )
