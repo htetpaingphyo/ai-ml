@@ -8,6 +8,7 @@ from descriptive.dispersion import (
     normal_distribution as nd,
     standard_deviation as sd,
     coefficient_of_variation as cv,
+    percentile,
 )
 
 
@@ -27,6 +28,7 @@ def main():
     print(f"IQR: {iqr(numbers).__round__(2)}")
     print(f"Outliers:", outliers(numbers))
     print(f"Coefficient of Variation: {cv(numbers).__round__(2)}")
+    print(f"35 Percentile: {percentile(numbers,35).__round__(2)}")
 
 
 if __name__ == "__main__":
