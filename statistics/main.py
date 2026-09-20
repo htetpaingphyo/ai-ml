@@ -7,6 +7,7 @@ from descriptive.dispersion import (
     iqr,
     normal_distribution as nd,
     standard_deviation as sd,
+    coefficient_of_variation as cv,
 )
 
 
@@ -21,10 +22,11 @@ def main():
     print("Mode:", mode(numbers))
     print("Standard Deviation:", sd(numbers).__round__(2))
     print(f"Normal Distribution of {n}: {nd(numbers,n).__round__(2)}")
-    print(
-        f"Q1: {q_one(numbers).__round__(2)}, Q3: {q_three(numbers).__round__(2)}, IQR: {iqr(numbers).__round__(2)}"
-    )
+    print(f"First Quartile: {q_one(numbers).__round__(2)}")
+    print(f"Third Quartile: {q_three(numbers).__round__(2)}")
+    print(f"IQR: {iqr(numbers).__round__(2)}")
     print(f"Outliers:", outliers(numbers))
+    print(f"Coefficient of Variation: {cv(numbers).__round__(2)}")
 
 
 if __name__ == "__main__":
